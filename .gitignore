@@ -1,0 +1,9 @@
+.scannerwork
+/.idea
+build/*
+qcloud.yml
+.DS_Store
+*mock.go
+/bin
+qcloud_exporter
+docker-image.sh
