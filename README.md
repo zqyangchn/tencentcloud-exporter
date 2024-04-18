@@ -1,3 +1,8 @@
+## 更新
+1. 删除 QCE/TDMQ, 实现新版本 QCE/ROCKETMQ
+2. 升级了下内置依赖 sdk
+3. 已测试的配置文件 configs/qcloud.yml
+
 # 腾讯云监控 Exporter v2
 ## 公告
 尊敬的用户，由于资源和人力等客观原因，本插件自2023年05月01日起将不再更新迭代，建议使用腾讯云托管的Prometheus监控服务，可通过【集成中心】-【云监控】功能一键安装采集腾讯云产品基础监控数据。   
@@ -41,7 +46,7 @@ Memcached |QCE/MEMCACHED|指标详情说明文档(待上线)
 轻量应用服务器Lighthouse |QCE/LIGHTHOUSE|[指标详情](https://cloud.tencent.com/document/product/248/60127)
 分布式数据库 TDSQL MySQL|QCE/TDMYSQL|[指标详情](https://cloud.tencent.com/document/product/248/54401)
 弹性公网 IP|QCE/LB|[指标详情](https://cloud.tencent.com/document/product/248/45099)
-消息队列RocketMQ版|QCE/TDMQ|[指标详情](https://cloud.tencent.com/document/product/248/51450#tdmq-rocketmq-.E7.89.88)
+消息队列RocketMQ版|QCE/TDMQ(已删除)|[指标详情](https://cloud.tencent.com/document/product/248/51450#tdmq-rocketmq-.E7.89.88)
 VPN 网关|QCE/VPNGW|[指标详情](https://cloud.tencent.com/document/product/248/45070)
 VPN 通道|QCE/VPNX|[指标详情](https://cloud.tencent.com/document/product/248/45071)
 CYNOSDB_MYSQL|QCE/CYNOSDB_MYSQL|[指标详情](https://cloud.tencent.com/document/product/248/45106)
@@ -51,6 +56,7 @@ CYNOSDB_MYSQL|QCE/CYNOSDB_MYSQL|[指标详情](https://cloud.tencent.com/documen
 全球应用加速|QCE/QAAP|[指标详情](https://cloud.tencent.com/document/product/248/45062)
 Web应用防火墙 |QCE/WAF|[指标详情](https://cloud.tencent.com/document/product/248/48124)
 负载均衡CLB(内网)|QCE/LB_PRIVATE|[指标详情](https://cloud.tencent.com/document/product/248/51899)
+消息队列RocketMQ版|QCE/ROCKETMQ|[指标详情](https://cloud.tencent.com/document/product/248/80467)
 
 `后续会有更多的产品支持`
 
