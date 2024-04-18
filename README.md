@@ -1,7 +1,7 @@
 ## 更新
 1. 删除 QCE/TDMQ, 实现新版本 QCE/ROCKETMQ
-2. 升级了下内置依赖 sdk
-3. 已测试的配置文件 configs/qcloud.yml
+2. 升级内置依赖 sdk
+3. 已测试配置文件 configs/qcloud-x.yml
 
 # 腾讯云监控 Exporter v2
 ## 公告

@@ -1,0 +1,130 @@
+credential:
+  access_key: "ak"
+  secret_key: "sk"
+  region: "ap-singapore"
+
+rate_limit: 15
+
+products:
+  # MySQL
+  - namespace: QCE/CDB
+    only_include_metrics:
+      # InstanceId InstanceType
+      - CpuUseRate
+      - ConnectionUseRate
+      - IopsUseRate
+      - MemoryUseRate
+      - VolumeRate
+      - SlowQueries
+      - SelectScan
+      - TableLocksWaited
+      - InnodbRowLockCurrentWaits
+    all_instances: true
+    extra_labels:
+      - InstanceName
+      - Zone
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # Redis
+  - namespace: QCE/REDIS_MEM
+    only_include_metrics:
+      # instanceid
+      - CpuUtil
+      - MemUtil
+      - ConnectionsUtil
+      - InBandwidthUtil
+      - InFlowLimit
+      - OutBandwidthUtil
+      - OutFlowLimit
+      - CmdSlow
+      - CmdErr
+      # instanceid pnodeid
+      #- CpuUtilProxy
+      # instanceid rnodeid
+      #- CpuUtilNode
+    all_instances: true
+    extra_labels:
+      - InstanceName
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # RocketMQ
+  - namespace: QCE/ROCKETMQ
+    all_instances: true
+    only_include_metrics:
+      # tenant namespace topic
+      - RocketmqTopicNumberOfSendLimit
+      # tenant namespace group
+      - RocketmqGroupRetrydiff
+      # tenant namespace topic group
+      - RocketmqTopicGroupGroupDiff
+      - RocketmqTopicGroupTimeDiff
+      - RocketmqTopicGroupConsumerCount
+    extra_labels:
+      - ClusterName
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # EIP
+  - namespace: QCE/LB
+    all_instances: true
+    only_include_metrics:
+      - IntrafficVipRatio
+      - OuttrafficVipRatio
+    extra_labels:
+      - AddressId
+      - AddressName
+      - AddressStatus
+      - InstanceId
+      - IsArrears
+      - IsBlocked
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # CLB (内网)
+  - namespace: QCE/LB_PRIVATE
+    only_include_metrics:
+      - IntrafficVipRatio
+      - OuttrafficVipRatio
+      - InDropPkts
+      - OutDropPkts
+      - DropTotalConns
+      - ConcurConnVipRatio
+    all_instances: true
+    extra_labels:
+      - LoadBalancerName
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # CLB (公网)
+  - namespace: QCE/LB_PUBLIC
+    only_include_metrics:
+      - IntrafficVipRatio
+      - OuttrafficVipRatio
+      - InDropPkts
+      - OutDropPkts
+      - DropTotalConns
+      - ConcurConnVipRatio
+    all_instances: true
+    extra_labels:
+      - VpcId
+      - LoadBalancerName
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
+  # Nat
+  - namespace: QCE/NAT_GATEWAY
+    only_include_metrics:
+      - Droppkg
+      - ConnsUsage
+      - Egressbandwidthusage
+      - WanInByteUsage
+    all_instances: true
+    extra_labels:
+      - NatGatewayName
+      - VpcId
+      - Zone
+    period_seconds: 60
+    metric_name_type: 2
+    reload_interval_minutes: 30
